@@ -27,4 +27,23 @@ public class LibraryRepository {
         return bookList.getbArr();
     }
 
+    public RentStatus rentBook(int rentBookInt) {
+        Book wish = bookList.getbArr()[rentBookInt - 1];
+        if (wish instanceof CookBook) {
+            if(((CookBook) wish).isCoupon()) {
+                user.setCouponCount(user.getCouponCount() + 1);
+                return RentStatus.RENT_SUCCESS_WITH_COUPON;
+            } else {
+                return RentStatus.RENT_SUCCESS;
+            }
+        } else if ( wish instanceof  CartoonBook) {
+            if (user.getAge() > ((CartoonBook) wish).getAccessAge()) {
+                return RentStatus.RENT_SUCCESS;
+            } else {
+                return RentStatus.RENT_FAIL;
+            }
+
+        }
+        return RentStatus.RENT_FAIL;
+    }
 }

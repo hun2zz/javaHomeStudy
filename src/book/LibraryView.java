@@ -54,8 +54,9 @@ public class LibraryView {
 
     void showBookList(){
         Book[] booklist = repository.getBookList();
-        for (Book book : booklist) {
-            System.out.println(book.info());
+        for (int i = 0; i < booklist.length; i++) {
+            Book book = booklist[i];
+            System.out.printf("%d. %s\n",i+1, book.info());
 
         }
     }
@@ -69,6 +70,21 @@ public class LibraryView {
                 System.out.println(book.info());
             }
         }
+    }
+
+
+    void rentBook() {
+        showBookList();
+        int rentBookInt = Integer.parseInt((SimpleInput.input("# 대여할 책의 번호 : ")));
+        RentStatus rent = repository.rentBook(rentBookInt);
+        if (rent == RentStatus.RENT_FAIL) {
+            System.out.println("# 대여에 실패하였습니다.");
+        } else if(rent == RentStatus.RENT_SUCCESS) {
+            System.out.println("# 대여에 성공하였습니다.");
+        } else if(rent == RentStatus.RENT_SUCCESS_WITH_COUPON) {
+            System.out.println("# 대여에 성공 후 쿠폰 발급이 완료 됐습니다.");
+        }
+
     }
     public void start() {
         showInput();
@@ -86,6 +102,7 @@ public class LibraryView {
                     containBookList();
                     break;
                 case "4":
+                    rentBook();
                     break;
                 case "5":
                     break;
@@ -97,4 +114,5 @@ public class LibraryView {
             }
         }
     }
+
 }
