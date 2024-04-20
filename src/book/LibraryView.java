@@ -60,6 +60,16 @@ public class LibraryView {
         }
     }
 
+
+    void containBookList(){
+        String bookName = SimpleInput.input("# 찾으려는 책의 제목 : ");
+        Book[] booklist = repository.getBookList();
+        for (Book book : booklist) {
+            if(book.getTitle().contains(bookName)) {
+                System.out.println(book.info());
+            }
+        }
+    }
     public void start() {
         showInput();
         while (true) {
@@ -73,6 +83,7 @@ public class LibraryView {
                     showBookList();
                     break;
                 case "3":
+                    containBookList();
                     break;
                 case "4":
                     break;
