@@ -22,8 +22,6 @@ H
 src/book/RentStatus.java,8/6/86ce7c759cc35216d65a413632f1ae052e6acd45
 A
 src/book/Run.java,6/9/69cca2c25809f503c76664f20818003e1fb72b00
-E
-src/day03/member.java,0/2/0299f147248b2a1896866ca35e0a5c5a96cde416
 D
 src/book/Gender.java,f/2/f205f2fc417f678a119b22cbf63441fa32b83575
 Å
@@ -42,3 +40,7 @@ G.idea/sonarlint/issuestore/a/5/a5cc2925ca8258af241be7e5b0381edf30266302,e/d/ed
 Q.idea/sonarlint/securityhotspotstore/2/9/293b49588eea56b794584858e6a631e8c5332636,5/7/57165f01bbe6078af6c26009bd9e7891e77a6ccf
 Å
 Q.idea/sonarlint/securityhotspotstore/0/2/022198caa5ffda706e51835fc8caf0a941b3445c,e/e/eeb4bbb331ef3be8016689faa51ec61152b3e81d
+F
+src/book/BookList.java,e/0/e0c6538787771cd32f79bd4a99428ed91d147878
+I
+src/util/SimpleInput.java,8/0/8071ec63f7fb49416155a04e995f8d12a3ee8807
