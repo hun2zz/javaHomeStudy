@@ -56,7 +56,7 @@ public class LibraryView {
         Book[] booklist = repository.getBookList();
         for (int i = 0; i < booklist.length; i++) {
             Book book = booklist[i];
-            System.out.printf("%d. %s\n",i+1, book.info());
+            System.out.printf("%d. %s , 저자 : %s\n",i+1, book.info(), book.getAuthor());
 
         }
     }
@@ -86,6 +86,21 @@ public class LibraryView {
         }
 
     }
+
+    void authorSearch() {
+        String bookName = SimpleInput.input("# 찾으려는 책의 저자 : ");
+        boolean seach = false;
+        Book[] booklist = repository.getBookList();
+        for (Book book : booklist) {
+            if(book.getAuthor().equals(bookName)) {
+                System.out.println(book.info());
+                seach = true;
+            }
+        }
+        if (!seach){
+            System.out.println("그런 저자는 없습니다.");
+        }
+    }
     public void start() {
         showInput();
         while (true) {
@@ -105,6 +120,7 @@ public class LibraryView {
                     rentBook();
                     break;
                 case "5":
+                    authorSearch();
                     break;
                 case "9":
                     System.out.println("# 시스템을 종료합니다");
