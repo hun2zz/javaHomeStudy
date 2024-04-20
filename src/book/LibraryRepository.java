@@ -23,11 +23,7 @@ public class LibraryRepository {
         return user;
     }
 
-//    public void showInfo () {
-//        System.out.println("******* 회원님 정보 *******");
-//        System.out.println("# 회원명 : "+ user.getName());
-//        System.out.println("# 나이 : "+ user.getAge());
-//        System.out.println("# 남성 : "+ user.getGenderToString());
-//        System.out.println("# 쿠폰개수 : "+ user.getCouponCount());
-//    }
+    public static Book[] getBookList() {
+        return bookList.getbArr();
+    }
 }

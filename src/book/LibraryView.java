@@ -52,6 +52,14 @@ public class LibraryView {
         System.out.println("# 쿠폰개수 : " + currentUser.getCouponCount());
     }
 
+    void showBookList(){
+        Book[] booklist = repository.getBookList();
+        for (Book book : booklist) {
+            System.out.println(book.info());
+
+        }
+    }
+
     public void start() {
         showInput();
         while (true) {
@@ -62,6 +70,7 @@ public class LibraryView {
                     showPlayerMenu();
                     break;
                 case "2":
+                    showBookList();
                     break;
                 case "3":
                     break;
